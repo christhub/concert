@@ -1,9 +1,9 @@
 development:
   adapter: postgresql
   database: concert_development
-  username: <%= ENV['PG_USER'] %>
-  	password: <%= ENV['PG_PASS'] %>
-  	host: localhost
+  # username: <%= ENV['PG_USER'] %>
+  # 	password: <%= ENV['PG_PASS'] %>
+  # 	host: localhost
 test:
   adapter: postgresql
   database: concert_test
