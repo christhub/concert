@@ -1,0 +1,15 @@
+<div class="font-container">
+  <div class="header">
+    <h2 class="text-center band-header"><%= @venue.name %>:</h2>
+    <a class="back" href="/venues/">back</a>
+  </div>
+  <hr>
+  <div class="text-center">
+    <form class="delete-band" action="/venues/delete-venue/" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="id" value="<%= @venue.id %>">
+      <button type="submit" class='btn btn-danger' name="button">delete venue</i></button>
+    </form>
+  </div>
+
+</div>

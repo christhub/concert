@@ -1,0 +1,27 @@
+<div class="font-container">
+  <div class="header">
+    <h2 class="text-center">venues:</h2>
+    <a class="back" href="/">☮</a>
+  </div>
+
+  <hr>
+
+  <div class="input-form">
+    <h3>add a venue:</h3>
+    <form class="add-band" action="/venues/new-venue/" method="post">
+      <label>venue name:</label>
+      <input type="text" name="name">
+      <button type="submit">add venue</button>
+    </form>
+  </div>
+
+  <div class="band-display-list">
+    <h3>venue list:</h3>
+      <ul>
+        <% @venues.each do |venue| %>
+          <li><a href="/venues/<%=venue.id%>/"><%= venue.name %></a></li>
+        <% end %>
+      </ul>
+  </div>
+
+</div>

@@ -38,10 +38,42 @@ a:hover {
   margin-right: auto
 }
 
+.band-header {
+  font-size: 3em;
+}
+
+.band-display {
+  float: left;
+  width: 45%;
+  font-size: 1em;
+  text-align: right;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .font-container {
    font-family: 'UrbanEleganceRegular';
    font-weight: normal;
    font-style: normal;
+}
+
+.header {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*.update-band {
+  font-size: .5em;
+}*/
+
+.venue-display {
+  float: right;
+  width: 45%;
+}
+
+.update-venue {
+  text-align: center;   
 }
 /*
 .gir {

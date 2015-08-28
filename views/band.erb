@@ -1,0 +1,45 @@
+<div class="font-container">
+  <div class="header">
+    <h2 class="text-center band-header"><%= @band.name %>:</h2>
+    <a class="back" href="/bands/">back</a>
+  </div>
+  <hr>
+  <div class="band-display">
+
+    <form class="update-band input-group-sm" action="/bands/update-band/" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <label for="name">name</label>
+      <input type="text" name="updated_band_name" placeholder="<%=@band.name %>">
+      <input type="hidden" name="id" value="<%= @band.id %>">
+      <button type="submit">update <%=@band.name%></button>
+    </form>
+
+    <form class="delete-band" action="/bands/delete-band/" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="id" value="<%= @band.id %>">
+      <button type="submit" class='btn btn-danger' name="button">delete band</i></button>
+    </form>
+
+    <h3 class="update-venue">assign a venue to this band:</h3>
+
+    <form for="venues" class="update-venue" action="/bands/update-venue/" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <input type="hidden" name="id" value="<%= @band.id %>">
+        <% @venues.each do |venue| %>
+      <input type="checkbox" name="venue[]" value="<%=venue.id%>"><%=venue.name%><br>
+        <% end %>
+      <input type="submit" value="Submit">
+    </form>
+
+  </div>
+
+<div class="venue-display">
+<h3>venues:</h3>
+  <% @band.venues.each do |venue| %>
+  <ul>
+    <li><%=venue.name%></li>
+  </ul>
+  <% end %>
+</div>
+
+</div>
