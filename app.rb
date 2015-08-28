@@ -17,11 +17,12 @@ end
 
 post('/venues/new-venue/') do
   name = params.fetch('name')
-  if name == ""
+  new_venue = Venue.new(name: name)
+  if new_venue.save
     redirect('/venues/')
+  else
+    erb(:errors)
   end
-  new_venue = Venue.create(name: name)
-  redirect('/venues/')
 end
 
 get('/venues/:id/') do
@@ -53,11 +54,12 @@ end
 
 post('/bands/new-band/') do
   name = params.fetch('name')
-  if name == ""
+  new_band = Band.new(name: name)
+  if new_band.save
     redirect('/bands/')
+  else
+    erb(:errors)
   end
-  new_band = Band.create(name: name)
-  redirect('/bands/')
 end
 
 delete('/bands/delete-band/') do

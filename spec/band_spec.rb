@@ -7,4 +7,9 @@ describe(Band) do
       expect(test_band.name).to(eq("White stripes"))
     end
   end
+  it("ensures the presence of a name") do
+    band = Band.new({:name => ""})
+    expect(band.save()).to(eq(false))
+  end
+
 end
