@@ -1,0 +1,22 @@
+<div class="font-container">
+  <h2 class="text-center">bands:</h2>
+  <hr>
+
+  <div class="input-form">
+    <h3>add a band:</h3>
+    <form class="add-band" action="/bands/new-band/" method="post">
+      <label>band name:</label>
+      <input type="text" name="name">
+      <button type="submit">add band</button>
+    </form>
+  </div>
+
+  <div class="band-display-list">
+    <h3>band list:</h3>
+      <ul>
+        <% @bands.each do |band| %>
+          <li><a href="/bands/<%=band.id%>/"><%= band.name %></a></li>
+        <% end %>
+      </ul>
+  </div>
+</div>
